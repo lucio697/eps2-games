@@ -1,0 +1,51 @@
+
+       /* ==========================================
+   ESTILOS ESPECÍFICOS PARA LA VISTA DEL JUEGO
+   ========================================== */
+
+/* Bloque principal del juego (fusionado y sin duplicados) */
+.game-detail-hero {
+    
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #1a2333;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor del video */
+.ratio-16x9 {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Estrellas interactivas */
+.rating-stars {
+    display: inline-flex;
+    font-size: 1.6rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.star {
+    color: #4a5568;
+    transition: color 0.2s, transform 0.1s;
+    margin-right: 4px;
+}
+
+.star.active, 
+.star.hover {
+    color: #ffc107;
+}
+
+/* Ficha técnica */
+.info-pill {
+    background-color: #1a2333;
+    border: 1px solid rgba(0, 102, 204, 0.2);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+}

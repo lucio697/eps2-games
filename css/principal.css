@@ -1,0 +1,317 @@
+/* ==========================================
+   1. ESTILOS GENERALES Y BASE
+   ========================================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b0f19;
+    color: white;
+}
+
+/* ==========================================
+   2. CARRUSEL (Flujo natural del documento)
+   ========================================== */
+.header-carrusel {
+    position: relative; 
+    width: 100%;
+    height: 65vh; /* Subido de 50vh a 65vh para que las fotos luzcan más grandes */
+    background-color: #121826;
+    border-bottom: 3px solid #0066cc;
+    overflow: hidden;
+}
+
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; 
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: aquamarine;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* BOTONES DEL CARRUSEL */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 102, 204, 0.7);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    z-index: 1010;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.carrusel-btn:hover {
+    background-color: rgba(0, 122, 244, 0.9);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* ==========================================
+   3. BARRA DE NAVEGACIÓN (Efecto Sticky)
+   ========================================== */
+.navbar {
+    position: -webkit-sticky; /* Soporte para Safari antiguo */
+    position: sticky;
+    top: 0;        /* Se congela arriba de todo al hacer scroll */
+    margin-top: 0; /* Empieza pegada justo abajo del carrusel */    
+    z-index: 1050; /* Queda por encima del contenido al deslizar */
+}
+
+/* ==========================================
+   4. CONTENIDO DE LA PÁGINA Y RELLENOS
+   ========================================== */
+.contenido-pagina {
+    /* CORRECCIÓN: Se quitó el 'margin-top: 40vh' para evitar el hueco negro */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.contenido-pagina h2 {
+    color: white;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.caja-relleno {
+    background-color: #1a2333;
+    border: 1px solid #0066cc;
+    height: 400px; 
+    margin-top: 25px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #666;
+}
+/* ==========================================
+   5. PERSONALIZACIÓN GAMER PARA LA NAVBAR
+   ========================================== */
+.bg-gamer-nav {
+    background-color: #121826 !important; /* Mismo tono del fondo del carrusel */
+    border-bottom: 2px solid #0066cc;     /* Línea azul sutil abajo */
+}
+
+/* Color de los textos de la navbar */
+.navbar-dark .navbar-nav .nav-link {
+    color: #a0aec0;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+/* Color al pasar el mouse por encima (Hover) */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #0088ff !important; 
+}
+
+/* Personalización del Buscador */
+.search-input {
+    background-color: #1a2333 !important;
+    border: 1px solid #0066cc !important;
+    color: white !important;
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.6) !important;
+}
+
+/* Botón de búsqueda */
+.btn-search {
+    color: white;
+    background-color: #0066cc;
+    border: 1px solid #0066cc;
+    transition: all 0.2s;
+}
+
+.btn-search:hover {
+    background-color: #0052a3;
+    border-color: #0052a3;
+    color: white;
+}
+
+/* Menú desplegable de categorías */
+.dropdown-menu-dark {
+    background-color: #121826 !important;
+    border: 1px solid #0066cc !important;
+}
+
+.dropdown-item:hover {
+    background-color: #0066cc !important;
+    color: white !important;
+}
+/* ==========================================
+   6. DISEÑO DE TARJETAS DE JUEGOS Y CATEGORÍAS
+   ========================================== */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* Estilo de la Tarjeta del Juego */
+.game-card {
+    background-color: #121826 !important;
+    border: 1px solid #1a2333 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #0066cc !important;
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+}
+
+/* 1. MÁS ESPACIO PARA LA IMAGEN (Subida de 220px a 310px) */
+.game-card-img {
+    height: 310px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-bottom: 2px solid #1a2333;
+}
+
+/* 2. RECUADRO INFERIOR MÁS COMPACTO (Reduce el padding del contenedor) */
+.game-card .card-body {
+    padding: 0.65rem 0.85rem !important;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título más pegado y proporcionado */
+.game-card .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem !important;
+}
+
+/* Texto de categoría con margen mínimo */
+.game-card .card-text {
+    margin-bottom: 0.5rem !important;
+}
+
+/* Botón interno más compacto */
+.btn-game {
+    background-color: #1a2333 !important;
+    border: 1px solid #0066cc !important;
+    color: #0088ff !important;
+    font-weight: bold;
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.88rem;
+    transition: all 0.2s ease;
+}
+
+.btn-game:hover {
+    background-color: #0066cc !important;
+    color: white !important;
+}
+
+/* Botón verde de descarga directa compacto */
+.btn-game.btn-success,
+.game-card .btn-success {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #ffffff !important;
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.88rem;
+}
+
+.btn-game.btn-success:hover,
+.game-card .btn-success:hover {
+    background-color: #157347 !important;
+    border-color: #146c43 !important;
+}
+
+/* Bloques de categorías inferiores */
+.category-box {
+    background-color: #121826;
+    border: 1px solid #1a2333;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.category-box h5 {
+    margin: 0;
+    color: #a0aec0;
+    font-size: 1.1rem;
+}
+
+.category-box:hover {
+    background-color: #0066cc;
+    border-color: #0066cc;
+}
+
+.category-box:hover h5 {
+    color: white;
+}
+/* Estado del botón de descarga durante el progreso */
+.btn-descarga.descargando {
+    background-color: #0066cc !important;
+    border-color: #0066cc !important;
+    cursor: wait;
+}
+
+.btn-descarga.completado {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
