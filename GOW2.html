@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,16 @@
     <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="css/juegoss.css">
 </head>
+
 <body class="bg-dark text-white">
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-gamer-nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="principal.html">EPS2</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,13 +37,14 @@
 
     <!-- DETALLE DEL JUEGO -->
     <main class="container my-5">
-        <div class="game-detail-hero mb-4" style="background-image: linear-gradient(rgba(18, 24, 38, 0.85), rgba(18, 24, 38, 0.95)), url('fotos/God_of_War_2.jpg');">
+        <div class="game-detail-hero mb-4"
+            style="background-image: linear-gradient(rgba(18, 24, 38, 0.85), rgba(18, 24, 38, 0.95)), url('fotos/God_of_War_2.jpg');">
             <div class="row align-items-center">
-                
+
                 <!-- Info principal -->
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h1 class="display-4 fw-bold text-primary mb-1">God of War II</h1>
-                    
+
                     <!-- Puntuación por estrellas -->
                     <div class="d-flex align-items-center mb-3">
                         <div class="rating-stars me-2" id="rating-container">
@@ -59,9 +64,10 @@
                     </div>
 
                     <p class="lead text-light mb-4">
-                        Kratos se sienta en el trono del Olimpo como el nuevo dios de la guerra. Traicionado por Zeus, viajará a los confines de la creación para cambiar su propio destino.
+                        Kratos se sienta en el trono del Olimpo como el nuevo dios de la guerra. Traicionado por Zeus,
+                        viajará a los confines de la creación para cambiar su propio destino.
                     </p>
-                    
+
                     <!-- Ficha técnica -->
                     <div class="row g-2 mb-4">
                         <div class="col-6">
@@ -91,7 +97,8 @@
                     </div>
 
                     <!-- BOTÓN DE DESCARGA -->
-                    <a href="#" class="btn btn-success btn-lg px-4 py-2 w-100 w-sm-auto" target="_blank" rel="noopener noreferrer">
+                    <a href="#" class="btn btn-success btn-lg px-4 py-2 w-100 w-sm-auto" target="_blank"
+                        rel="noopener noreferrer">
                         ⬇ Descargar ISO (Mediafire)
                     </a>
                 </div>
@@ -99,12 +106,9 @@
                 <!-- VIDEO TRAILER / GAMEPLAY -->
                 <div class="col-lg-6">
                     <div class="ratio ratio-16x9 rounded overflow-hidden shadow border border-secondary">
-                        <iframe 
-                            src="https://www.youtube.com/embed/oe0OmX9hINA" 
-                            title="God of War II PS2 Trailer" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="w-100 h-100" controls preload="metadata">
+                            <source src="Videos/gow2-trailer.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -116,4 +120,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/puntuacion.js"></script>
 </body>
+
 </html>
