@@ -78,6 +78,9 @@ btnNavPsx2.addEventListener('click', (e) => {
     seccionJuegos.style.display = 'none';
     seccionPsx2.style.display = 'block';
 
+    // Oculta el buscador
+    if (searchForm) searchForm.style.display = 'none';
+
     btnNavPsx2.classList.add('active');
     btnNavInicio.classList.remove('active');
     window.scrollTo({ top: 350, behavior: 'smooth' }); // Desplaza justo debajo del carrusel
@@ -89,18 +92,21 @@ btnNavInicio.addEventListener('click', (e) => {
     seccionPsx2.style.display = 'none';
     seccionJuegos.style.display = 'block';
 
+    // Vuelve a mostrar el buscador con formato flex
+    if (searchForm) searchForm.style.display = 'flex';
+
     btnNavInicio.classList.add('active');
     btnNavPsx2.classList.remove('active');
 });
 
 // ==========================================
-// SIMULACIÓN DE DESCARGA CON PORCENTAJE
+// DESCARGA REAL CON PROGRESO EN TIEMPO REAL
 // ==========================================
 const botonesDescarga = document.querySelectorAll('.btn-descarga');
 
 botonesDescarga.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        // Evita disparar múltiples descargas en el mismo botón
+    btn.addEventListener('click', async () => {
+        // Evita disparar múltiples clics en el mismo botón
         if (btn.classList.contains('descargando')) return;
 
         const textoOriginal = btn.innerHTML;
@@ -109,43 +115,82 @@ botonesDescarga.forEach((btn) => {
         const progressContainer = btn.parentElement.querySelector('.progress');
         const progressBar = progressContainer.querySelector('.progress-bar');
 
-        let porcentaje = 0;
         btn.classList.add('descargando');
         btn.disabled = true;
         progressContainer.classList.remove('d-none');
+        progressBar.style.width = '0%';
+        btn.innerHTML = `⏳ Conectando...`;
 
-        // Intervalo que incrementa el porcentaje cada 40 milisegundos (~4 segundos en total)
-        const intervalo = setInterval(() => {
-            porcentaje += Math.floor(Math.random() * 4) + 1; // Incrementos fluidos aleatorios
+        try {
+            const respuesta = await fetch(archivoUrl);
 
-            if (porcentaje >= 100) {
-                porcentaje = 100;
-                clearInterval(intervalo);
-
-                btn.innerHTML = `✔ Descargado 100%`;
-                progressBar.style.width = '100%';
-
-                // Disparo de la descarga directa del archivo en la computadora
-                const linkDescarga = document.createElement('a');
-                linkDescarga.href = archivoUrl;
-                linkDescarga.download = nombreArchivo;
-                document.body.appendChild(linkDescarga);
-                linkDescarga.click();
-                document.body.removeChild(linkDescarga);
-
-                // Reestablece el botón tras 3 segundos
-                setTimeout(() => {
-                    btn.classList.remove('descargando');
-                    btn.disabled = false;
-                    btn.innerHTML = textoOriginal;
-                    progressContainer.classList.add('d-none');
-                    progressBar.style.width = '0%';
-                }, 3000);
-            } else {
-                btn.innerHTML = `⏳ Descargando... ${porcentaje}%`;
-                progressBar.style.width = `${porcentaje}%`;
+            if (!respuesta.ok) {
+                throw new Error(`Error en la descarga: ${respuesta.statusText}`);
             }
-        }, 40);
+
+            // Obtenemos el peso total en bytes
+            const contentLength = respuesta.headers.get('content-length');
+            if (!contentLength) {
+                throw new Error('No se pudo determinar el tamaño del archivo');
+            }
+
+            const totalBytes = parseInt(contentLength, 10);
+            let bytesRecibidos = 0;
+
+            // Lector de datos en tiempo real
+            const lector = respuesta.body.getReader();
+            const fragmentos = []; // Almacena los paquetes de datos recibidos
+
+            while (true) {
+                const { done, value } = await lector.read();
+                if (done) break;
+
+                fragmentos.push(value);
+                bytesRecibidos += value.length;
+
+                // Cálculo del porcentaje real
+                const porcentaje = Math.floor((bytesRecibidos / totalBytes) * 100);
+
+                // Actualización en pantalla
+                progressBar.style.width = `${porcentaje}%`;
+                btn.innerHTML = `⏳ Descargando... ${porcentaje}%`;
+            }
+
+            // Una vez transferido el 100%, armamos el archivo y lo entregamos al usuario
+            const blob = new Blob(fragmentos);
+            const urlBlob = URL.createObjectURL(blob);
+
+            btn.innerHTML = `✔ Descargado 100%`;
+            progressBar.style.width = '100%';
+
+            const linkDescarga = document.createElement('a');
+            linkDescarga.href = urlBlob;
+            linkDescarga.download = nombreArchivo;
+            document.body.appendChild(linkDescarga);
+            linkDescarga.click();
+            document.body.removeChild(linkDescarga);
+
+            // Liberamos la memoria del navegador
+            setTimeout(() => URL.revokeObjectURL(urlBlob), 1000);
+
+            // Restablece el botón después de 3 segundos
+            setTimeout(() => {
+                btn.classList.remove('descargando');
+                btn.disabled = false;
+                btn.innerHTML = textoOriginal;
+                progressContainer.classList.add('d-none');
+                progressBar.style.width = '0%';
+            }, 3000);
+
+        } catch (error) {
+            console.error(error);
+            btn.innerHTML = `❌ Error al descargar`;
+            setTimeout(() => {
+                btn.classList.remove('descargando');
+                btn.disabled = false;
+                btn.innerHTML = textoOriginal;
+                progressContainer.classList.add('d-none');
+            }, 3000);
+        }
     });
 });
-
