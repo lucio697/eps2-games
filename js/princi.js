@@ -61,10 +61,14 @@ function buscarJuego() {
     });
 }
 
+// BUSCADOR EN INICIO (Envía a la página del catálogo)
 if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        buscarJuego();
+        const texto = searchInput.value.trim();
+        if (texto !== '') {
+            window.location.href = `catalogo.html?search=${encodeURIComponent(texto)}`;
+        }
     });
 }
 

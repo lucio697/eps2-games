@@ -14,7 +14,7 @@ const listaJuegos = [
     },
     {
         titulo: "Crash Bandicoot",
-        categoria: "Plataformas",
+        categoria: "Estrategia",
         imagen: "fotos/crashb.jpg",
         link: "crash.html"
     },
@@ -60,6 +60,59 @@ const listaJuegos = [
         imagen:"fotos/pes2011.jpg",
         tipo:"descarga",
         link:"https://www.mediafire.com/file/s0ebiiijd8jppbj"
+    },
+    {
+        titulo:"Caballeros del Zodiaco",
+        categoria:"Accion",
+        imagen:"fotos/caballeros-zodiaco.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/pioln8fy8tnks42?action=check"
+    },
+    {
+        titulo:"Hitman 2",
+        categoria:"Accion",
+        imagen:"fotos/hitman.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/sdyynk0a7nkn1f6?action=check"
+
+    },
+    {
+        titulo:"Yu-Gi-Oh! GX The Beginning of Destiny",
+        categoria:"Estrategia",
+        imagen:"fotos/yu-gi-oh.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/faqwun8c66kr6y6"
+
+    },
+    {
+        titulo:"WRC World Rally Championship",
+        categoria:"Deportes",
+        imagen:"fotos/wrc.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/bio7mal9cnffruk?action=check"
+    },
+    {
+        titulo:"Batman Begins",
+        categoria:"Accion",
+        imagen:"fotos/batman-begins.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/eh3e1qgziqm2kql?action=check"
+    },
+    {
+        titulo:"Dragon Ball Z Budokai Tenkaichi 3",
+        categoria:"Accion",
+        imagen:"fotos/dbz-bt3.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/2v2daxmmm3wk7c8?action=check"
+
+    },
+    {
+        titulo:"GTA Vice City",
+        categoria:"Accion",
+        imagen:"fotos/gta-vice-city.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/5g5b8ds98yhrxfb?action=check"
+
     }
 
 ];
@@ -67,11 +120,12 @@ const listaJuegos = [
 // 2. LEER LA CATEGORÍA DE LA URL (Ej: catalogo.html?cat=carreras)
 const parametrosURL = new URLSearchParams(window.location.search);
 const categoriaURL = parametrosURL.get('cat');
+const busquedaURL = parametrosURL.get('search');
 
 const contenedor = document.getElementById("contenedor-catalogo");
 const tituloCatalogo = document.getElementById("titulo-catalogo");
 
-// Si viene con parámetro ?cat=..., filtramos la lista; sino mostramos todo
+
 let juegosFiltrados = listaJuegos;
 
 if (categoriaURL) {
@@ -144,4 +198,8 @@ if (searchForm) {
 
 if (searchInput) {
     searchInput.addEventListener('input', buscarJuego);
+}
+if (busquedaURL && searchInput) {
+    searchInput.value = busquedaURL;
+    buscarJuego();
 }
