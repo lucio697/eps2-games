@@ -113,6 +113,120 @@ const listaJuegos = [
         tipo:"descarga",
         link:"https://www.mediafire.com/file/5g5b8ds98yhrxfb?action=check"
 
+    },
+    {
+        titulo:"Marvel vs Capcom 2",
+        categoria:"Accion",
+        imagen:"fotos/marvel-capcom.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/k2kjixbobbdhcsd"
+
+    },
+    {
+        titulo:"Pro Evolution Soccer Managment",
+        categoria:"Deportes, Estrategia",
+        imagen:"fotos/pro-evo-managment.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/nf6r5vwmuft6dqb?action=check"
+    },
+    {
+        titulo:"PES 2009",
+        categoria:"Deportes",
+        imagen:"fotos/pes-009.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/0jsth5vy9i3rbpl?action=check"
+    },
+    {
+        titulo:"Bully",
+        categoria:"Estrategia",
+        imagen:"fotos/bully.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/oszzmirqerrgmzu?action=check"
+    },
+    {
+        titulo:"FIFA 07",
+        categoria:"Deportes",
+        imagen:"fotos/fifa-07.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/4d3mkxksx7pt5mi?action=check"
+    },
+    {
+        titulo:"Principe de Persia Warrior Within",
+        categoria:"Accion",
+        imagen:"fotos/prince-persia-warrior.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/zke78u9scnhwvsa?action=check"
+    },
+    {
+        titulo:"Grand Theft Auto III",
+        categoria:"Accion",
+        imagen:"fotos/gta-3.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/qkvk3osg47bxqqg?action=check"
+    },
+    {
+        titulo:"Guitar Hero 3",
+        categoria:"Estrategia",
+        imagen:"fotos/guitar-hero-3.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/7hxg3y9ry0jbqxy?action=check"
+    },
+    {
+        titulo:"Black",
+        categoria:"Accion",
+        imagen:"fotos/black.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/dje6airmc1w8ouj?action=check"
+    },
+    {
+        titulo:"Killzone",
+        categoria:"Accion",
+        imagen:"fotos/killzone.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/2fp9k49ma14jy0p?action=check"
+    },
+    {
+        titulo:"WRC Rally Evolved",
+        categoria:"Deportes",
+        imagen:"fotos/wrc-evolved.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/i4hugxy0xtrhftj?action=check"
+    },
+    {
+        titulo:"Mortal Kombat Armagedon",
+        categoria:"Accion",
+        imagen:"fotos/mk-armagedon.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/rotxjb2xxqmbt5s?action=check"
+    },
+    {
+        titulo:"Marvel Rise of the Imperfect",
+        categoria:"Accion",
+        imagen:"fotos/marvel-rise.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/c0wuk822d681rop?action=check"
+    },
+    {
+        titulo:"Gladiator Sword Vengance",
+        categoria:"Accion",
+        imagen:"fotos/gladiator.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/f7ova415wqargmx?action=check"
+    },
+    {
+        titulo:"Metal Gear Solid 2",
+        categoria:"Accion",
+        imagen:"fotos/metal-gear-solid2.jpg",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/f50pkcucna40ezp?action=check"
+    },
+    {
+        titulo:"Call of Duty World at War",
+        categoria:"Accion",
+        imagen:"fotos/call-of-duty.webp",
+        tipo:"descarga",
+        link:"https://www.mediafire.com/file/qtts3coka8iqif7?action=check"
+
     }
 
 ];

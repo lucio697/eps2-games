@@ -215,6 +215,9 @@ body {
     font-weight: bold;
     letter-spacing: 0.5px;
     color: #ffffff;
+    padding-left: 12px;
+    border-left: 4px solid #0066cc;
+    line-height: 1.2;
 }
 
 /* Estilo de la Tarjeta del Juego */
@@ -437,4 +440,32 @@ body {
         font-size: 0.85rem !important;
         padding: 0.4rem !important;
     }
+}
+/* Línea divisoria sutil con degradé azul */
+.divider-neon {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #0066cc 0%, rgba(0, 102, 204, 0.15) 75%, transparent 100%);
+    border: none;
+}
+
+/* Botón 'Ver todos' estilo píldora interactivo */
+.btn-ver-todos {
+    color: #3399ff;
+    background-color: rgba(0, 102, 204, 0.15);
+    border: 1px solid rgba(0, 102, 204, 0.45);
+    border-radius: 50rem;
+    padding: 4px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-ver-todos:hover {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 102, 204, 0.5);
 }
