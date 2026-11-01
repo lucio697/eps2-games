@@ -1,4 +1,4 @@
-// 1. LISTA COMPLETA DE JUEGOS
+// LISTA COMPLETA JUEGOS
 const listaJuegos = [
     {
         titulo: "GTA San Andreas",
@@ -231,7 +231,7 @@ const listaJuegos = [
 
 ];
 
-// 2. LEER LA CATEGORÍA DE LA URL (Ej: catalogo.html?cat=carreras)
+// LEER LA CATEGORÍA DE LA URL 
 const parametrosURL = new URLSearchParams(window.location.search);
 const categoriaURL = parametrosURL.get('cat');
 const busquedaURL = parametrosURL.get('search');
@@ -244,21 +244,21 @@ let juegosFiltrados = listaJuegos;
 
 if (categoriaURL) {
     juegosFiltrados = listaJuegos.filter(juego => {
-        // Normalizamos quitando tildes y pasando a minúsculas para comparar
+        
         const catJuego = juego.categoria.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         const catFiltro = categoriaURL.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         return catJuego.includes(catFiltro);
     });
 
-    // Actualizamos el título de la página
+    
     if (tituloCatalogo) {
-        // Ponemos la primera letra en mayúscula
+        
         const nombreCat = categoriaURL.charAt(0).toUpperCase() + categoriaURL.slice(1);
         tituloCatalogo.textContent = `Catálogo: ${nombreCat}`;
     }
 }
 
-// 3. RENDERIZAR LAS TARJETAS EN PANTALLA
+//  LAS TARJETAS EN PANTALLA
 if (juegosFiltrados.length === 0) {
     contenedor.innerHTML = `<p class="text-muted fs-5">No hay juegos disponibles en esta categoría todavía.</p>`;
 } else {
@@ -285,7 +285,7 @@ if (juegosFiltrados.length === 0) {
     });
 }
 
-// 4. BUSCADOR EN TIEMPO REAL
+// BUSCADOR
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const gameCards = document.querySelectorAll('.game-item');

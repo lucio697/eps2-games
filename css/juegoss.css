@@ -1,9 +1,7 @@
 
-       /* ==========================================
-   ESTILOS ESPECÍFICOS PARA LA VISTA DEL JUEGO
-   ========================================== */
+/* ESTILOS ESPECÍFICOS PARA LA VISTA DEL JUEGO */
 
-/* Bloque principal del juego (fusionado y sin duplicados) */
+
 .game-detail-hero {
     
     background-size: cover;
@@ -15,14 +13,14 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Contenedor del video */
+
 .ratio-16x9 {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Estrellas interactivas */
+/* Estrellas valoracion */
 .rating-stars {
     display: inline-flex;
     font-size: 1.6rem;
@@ -41,7 +39,7 @@
     color: #ffc107;
 }
 
-/* Ficha técnica */
+/* Datos */
 .info-pill {
     background-color: #1a2333;
     border: 1px solid rgba(0, 102, 204, 0.2);

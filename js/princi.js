@@ -41,9 +41,9 @@ setInterval(() => {
     mostrarSlide(currentIndex + 1);
 }, 4000);
 
-// ==========================================
+
 // BUSCADOR DE JUEGOS
-// ==========================================
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const gameCards = document.querySelectorAll('.game-item');
@@ -76,9 +76,9 @@ if (searchInput) {
     searchInput.addEventListener('input', buscarJuego);
 }
 
-// ==========================================
-// CONTROL DE SECCIONES (SPA: INICIO / PCSX2)
-// ==========================================
+
+// CONTROL DE SECCIONES 
+
 const btnNavInicio = document.getElementById('btn-nav-inicio');
 const btnNavPsx2 = document.getElementById('btn-nav-psx2');
 const seccionJuegos = document.getElementById('seccion-juegos');
@@ -91,7 +91,7 @@ if (btnNavPsx2) {
         seccionJuegos.style.display = 'none';
         seccionPsx2.style.display = 'block';
 
-        // Oculta el buscador forzando !important sobre Bootstrap
+        //Se oculta el buscador
         if (searchForm) {
             searchForm.style.setProperty('display', 'none', 'important');
         }
@@ -102,14 +102,14 @@ if (btnNavPsx2) {
     });
 }
 
-// Volver a la vista de Juegos (Inicio)
+
 if (btnNavInicio) {
     btnNavInicio.addEventListener('click', (e) => {
         e.preventDefault();
         seccionPsx2.style.display = 'none';
         seccionJuegos.style.display = 'block';
 
-        // Restaura el buscador forzando flex
+        
         if (searchForm) {
             searchForm.style.setProperty('display', 'flex', 'important');
         }
@@ -119,9 +119,9 @@ if (btnNavInicio) {
     });
 }
 
-// ==========================================
+
 // DESCARGA DE COMPONENTES CON PROGRESO VISUAL
-// ==========================================
+
 const botonesDescarga = document.querySelectorAll('.btn-descarga');
 
 botonesDescarga.forEach((btn) => {
@@ -140,7 +140,7 @@ botonesDescarga.forEach((btn) => {
         progressContainer.classList.remove('d-none');
         progressBar.style.width = '0%';
 
-        // Dispara la descarga del archivo en el sistema de inmediato
+        
         const linkDescarga = document.createElement('a');
         linkDescarga.href = archivoUrl;
         linkDescarga.download = nombreArchivo;
@@ -148,7 +148,7 @@ botonesDescarga.forEach((btn) => {
         linkDescarga.click();
         document.body.removeChild(linkDescarga);
 
-        // Barra de progreso visual que acompaña la acción del usuario
+        // Barra de progreso visual 
         const intervalo = setInterval(() => {
             porcentaje += Math.floor(Math.random() * 5) + 3;
 
@@ -159,7 +159,7 @@ botonesDescarga.forEach((btn) => {
                 btn.innerHTML = `✔ Descargado 100%`;
                 progressBar.style.width = '100%';
 
-                // Restablece el botón después de 3 segundos
+                
                 setTimeout(() => {
                     btn.classList.remove('descargando');
                     btn.disabled = false;

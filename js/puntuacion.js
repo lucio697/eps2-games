@@ -1,4 +1,4 @@
-  /*<!-- SCRIPT DE ESTRELLAS INTERACTIVAS -->*/
+  
     
         const stars = document.querySelectorAll('.rating-stars .star');
         const ratingText = document.getElementById('rating-text');

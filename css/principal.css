@@ -1,6 +1,6 @@
-/* ==========================================
-   1. ESTILOS GENERALES Y BASE
-   ========================================== */
+
+/*ESTILOS GENERALES Y BASE */
+   
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -8,14 +8,12 @@ body {
     color: white;
 }
 
-/* ==========================================
-   2. CARRUSEL (Flujo natural del documento)
-   ========================================== */
+/* CARRUSEL   */
 .header-carrusel {
     position: relative;
     width: 100%;
     height: 65vh;
-    /* Subido de 50vh a 65vh para que las fotos luzcan más grandes */
+
     background-color: #121826;
     border-bottom: 3px solid #0066cc;
     overflow: hidden;
@@ -100,26 +98,22 @@ body {
     right: 20px;
 }
 
-/* ==========================================
-   3. BARRA DE NAVEGACIÓN (Efecto Sticky)
-   ========================================== */
+/* BARRA DE NAVEGACIÓN  */
 .navbar {
     position: -webkit-sticky;
-    /* Soporte para Safari antiguo */
+    
     position: sticky;
     top: 0;
-    /* Se congela arriba de todo al hacer scroll */
+    
     margin-top: 0;
-    /* Empieza pegada justo abajo del carrusel */
+    
     z-index: 1050;
-    /* Queda por encima del contenido al deslizar */
+    
 }
 
-/* ==========================================
-   4. CONTENIDO DE LA PÁGINA Y RELLENOS
-   ========================================== */
+/* CONTENIDO DE LA PÁGINA Y RELLENOS */
 .contenido-pagina {
-    /* CORRECCIÓN: Se quitó el 'margin-top: 40vh' para evitar el hueco negro */
+   
     padding: 30px;
     box-sizing: border-box;
 }
@@ -143,30 +137,28 @@ body {
     color: #666;
 }
 
-/* ==========================================
-   5. PERSONALIZACIÓN GAMER PARA LA NAVBAR
-   ========================================== */
+/* PERSONALIZACIÓN DEL LA NAVBAR */
 .bg-gamer-nav {
     background-color: #121826 !important;
-    /* Mismo tono del fondo del carrusel */
+    
     border-bottom: 2px solid #0066cc;
-    /* Línea azul sutil abajo */
+    
 }
 
-/* Color de los textos de la navbar */
+
 .navbar-dark .navbar-nav .nav-link {
     color: #a0aec0;
     font-weight: 500;
     transition: color 0.2s;
 }
 
-/* Color al pasar el mouse por encima (Hover) */
+
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     color: #0088ff !important;
 }
 
-/* Personalización del Buscador */
+
 .search-input {
     width: 250px;
     background-color: #1a2333 !important;
@@ -182,7 +174,7 @@ body {
     box-shadow: 0 0 8px rgba(0, 102, 204, 0.6) !important;
 }
 
-/* Botón de búsqueda */
+
 .btn-search {
     color: white;
     background-color: #0066cc;
@@ -196,7 +188,7 @@ body {
     color: white;
 }
 
-/* Menú desplegable de categorías */
+
 .dropdown-menu-dark {
     background-color: #121826 !important;
     border: 1px solid #0066cc !important;
@@ -207,9 +199,7 @@ body {
     color: white !important;
 }
 
-/* ==========================================
-   6. DISEÑO DE TARJETAS DE JUEGOS Y CATEGORÍAS
-   ========================================== */
+/* DISEÑO DE TARJETAS DE JUEGOS Y CATEGORÍAS */
 .section-title {
     font-size: 1.8rem;
     font-weight: bold;
@@ -238,7 +228,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
 }
 
-/* 1. MÁS ESPACIO PARA LA IMAGEN (Subida de 220px a 310px) */
+
 .game-card-img {
     height: 310px;
     width: 100%;
@@ -247,7 +237,7 @@ body {
     border-bottom: 2px solid #1a2333;
 }
 
-/* 2. RECUADRO INFERIOR MÁS COMPACTO (Reduce el padding del contenedor) */
+
 .game-card .card-body {
     padding: 0.65rem 0.85rem !important;
     flex-grow: 1;
@@ -256,18 +246,18 @@ body {
     justify-content: space-between;
 }
 
-/* Título más pegado y proporcionado */
+
 .game-card .card-title {
     font-size: 1.05rem;
     margin-bottom: 0.15rem !important;
 }
 
-/* Texto de categoría con margen mínimo */
+
 .game-card .card-text {
     margin-bottom: 0.5rem !important;
 }
 
-/* Botón interno más compacto */
+
 .btn-game {
     background-color: #1a2333 !important;
     border: 1px solid #0066cc !important;
@@ -283,7 +273,7 @@ body {
     color: white !important;
 }
 
-/* Botón verde de descarga directa compacto */
+
 .btn-game.btn-success,
 .game-card .btn-success {
     background-color: #198754 !important;
@@ -299,7 +289,7 @@ body {
     border-color: #146c43 !important;
 }
 
-/* Bloques de categorías inferiores */
+/* Bloques de categorías */
 .category-box {
     background-color: #121826;
     border: 1px solid #1a2333;
@@ -323,7 +313,7 @@ body {
     color: white;
 }
 
-/* Estado del botón de descarga durante el progreso */
+/* Estado del botón de descarga */
 .btn-descarga.descargando {
     background-color: #0066cc !important;
     border-color: #0066cc !important;
@@ -342,23 +332,21 @@ body {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* Aclara las viñetas y descripciones de las tarjetas */
+
 .game-card .text-muted {
     color: #cbd5e1 !important;
 }
 
-/* ==========================================
-   7. ADAPTABILIDAD RESPONSIVE (MÓVILES Y TABLETS)
-   ========================================== */
+/* RESPONSIVE  */
 
-/* Tablets y pantallas medianas (menos de 992px) */
+/* Tablets y pantallas medianas  */
 @media (max-width: 991.98px) {
     .header-carrusel {
         height: 45vh;
-        /* Reduce el alto para no ocupar tanta pantalla */
+       
     }
 
-    /* El buscador en el menú hamburguesa ocupa todo el ancho */
+    
     #search-form {
         margin-top: 12px;
         margin-bottom: 8px;
@@ -367,7 +355,7 @@ body {
 
     .search-input {
         width: 100% !important;
-        /* Llena el ancho dentro del menú desplegable */
+        
     }
 
     .navbar-collapse {
@@ -376,16 +364,16 @@ body {
     }
 }
 
-/* Celulares (menos de 768px) */
+/* Celulares */
 
 @media (max-width: 767.98px) {
     .header-carrusel {
         height: 30vh;
         min-height: 200px;
-        /* Evita que quede una franja diminuta */
+        
     }
 
-    /* Flechas del carrusel más compactas para no tapar la imagen */
+    
     .carrusel-btn {
         padding: 6px 10px;
         font-size: 1rem;
@@ -399,7 +387,7 @@ body {
         right: 10px;
     }
 
-    /* Ajuste de márgenes del contenedor general */
+    
     .contenido-pagina {
         padding: 15px 10px;
     }
@@ -408,12 +396,12 @@ body {
         font-size: 1.4rem;
     }
 
-    /* En celulares las portadas de los juegos son más compactas */
+    
     .game-card-img {
         height: 240px;
     }
 
-    /* AQUÍ ADENTRO: Hace que el buscador use todo el ancho solo en celulares */
+    
     #search-form {
         width: 100%;
         margin-top: 10px;
@@ -424,7 +412,7 @@ body {
     }
 }
 
-/* Teléfonos muy angostos (menos de 400px) */
+/* Teléfonos chicos */
 @media (max-width: 400px) {
     .header-carrusel {
         height: 25vh;
@@ -435,13 +423,13 @@ body {
         height: 200px;
     }
 
-    /* En la sección PCSX2 los textos de los botones no se desbordan */
+    
     .btn-descarga {
         font-size: 0.85rem !important;
         padding: 0.4rem !important;
     }
 }
-/* Línea divisoria sutil con degradé azul */
+
 .divider-neon {
     height: 2px;
     width: 100%;
@@ -449,7 +437,7 @@ body {
     border: none;
 }
 
-/* Botón 'Ver todos' estilo píldora interactivo */
+
 .btn-ver-todos {
     color: #3399ff;
     background-color: rgba(0, 102, 204, 0.15);
